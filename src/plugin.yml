@@ -5,7 +5,7 @@ author: Adrian Wowk
 commands:
   disenchant:
     usage: /<command> <target> <enchantment>
-    aliases: [de, disench]
+    aliases: [quickdisenchant, qd, de, disench]
 api-version: 1.14
 permissions:
   quickdisenchant.disenchant:
