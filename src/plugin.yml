@@ -1,0 +1,18 @@
+name: QuickDisenchant
+version: 1.0
+main: com.adrianwowk.quickdisenchant.QuickDisenchant
+author: Adrian Wowk
+commands:
+  disenchant:
+    usage: /<command> <target> <enchantment>
+    aliases: [de, disench]
+api-version: 1.14
+permissions:
+  quickdisenchant.disenchant:
+    description: Allows use of /disenchant command
+    default: op
+  quickdisenchant.*:
+    description: Wildcard permission
+    default: op
+    children:
+      quickdisenchant.disenchant: true
