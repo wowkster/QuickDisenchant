@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="TestServer">
-    <output-path>$PROJECT_DIR$/../Server/plugins</output-path>
-    <root id="archive" name="QuickDisenchant.jar">
-      <element id="module-output" name="QuickDisenchant" />
-    </root>
-  </artifact>
-</component>
