@@ -28,6 +28,8 @@ public class QuickDisenchant extends JavaPlugin {
         getCommand("disenchant").setTabCompleter(new QDTabCompleter());
         getCommand("disenchant").setExecutor(new CommandHandler(this));
 
+        Metrics metrics = new Metrics(this, 10039);
+
         // Server Console Message
         this.getLogger().info(ChatColor.GREEN + "=================================");
         this.getLogger().info(ChatColor.GREEN + "         [QuickDisenchant]          ");

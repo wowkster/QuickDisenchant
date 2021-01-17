@@ -7,13 +7,15 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../Dependencies/spigot-api-1.16.1-R0.1-20200705.225421-92.jar!/" />
+          <root url="jar://$MODULE_DIR$/../Dependencies/spigot-1.16.4.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../Dependencies/spigot-1.16.4.jar!/" />
+        </SOURCES>
       </library>
     </orderEntry>
   </component>
