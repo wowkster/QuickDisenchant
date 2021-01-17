@@ -1,0 +1,29 @@
+#Customizable Messages
+messages:
+  #Prefix before all plugin messages
+  prefix: "&7[&dQuickDisenchant&7] &e"
+  command:
+    reload: "&aReloaded Config."
+    description: "\n&7 =================================\n
+    \n
+    &eThis command removes a specified enchantment from an item.\n
+    \n&6
+    /disenchant <target> [enchantment_id] [levels]\n
+    \n
+    &7&oor&r&6\n
+    \n
+    /disenchant reload\n
+    \n
+    &7================================="
+    success:
+      removed-all: "Removed all enchantments from item."
+      removed-ench: "Removed enchantment %ENCH% from item."
+      removed-level: "Removed %LEVELS% level(s) of enchantment %ENCH% from item."
+    invalid:
+      console: "&cYou must be a player to utilize these commands!"
+      no-permission: "&cYou do not have permission to use this command"
+      unknown-target: "Selected target &b%TARGET% &ecould not be found"
+      item-not-enchanted: "The selected item is not enchanted"
+      unknown-ench: "The specified enchantment is invalid. Usage: /disenchant <target> [enchantment_id] [levels]"
+      number-format-exception: "Argument %ARG% could not be parsed to an integer."
+      item-does-not-contain-ench: "The specified item does not contain the specified enchantment."

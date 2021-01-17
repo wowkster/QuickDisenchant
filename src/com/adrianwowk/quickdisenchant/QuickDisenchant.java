@@ -6,9 +6,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Server;
 import org.bukkit.command.ConsoleCommandSender;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.ShapedRecipe;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class QuickDisenchant extends JavaPlugin {
@@ -23,13 +20,13 @@ public class QuickDisenchant extends JavaPlugin {
     }
 
     public void onEnable() {
+
+        saveDefaultConfig();
+
         // Register command tab completer and executer
 
         getCommand("disenchant").setTabCompleter(new QDTabCompleter());
-        getCommand("disenchant").setExecutor(new CommandHandler());
-
-        // Register Event Listeners
-        //Bukkit.getServer().getPluginManager().registerEvents(new BedrockMinerEvents(), (Plugin) this);
+        getCommand("disenchant").setExecutor(new CommandHandler(this));
 
         // Server Console Message
         this.getLogger().info(ChatColor.GREEN + "=================================");
@@ -40,5 +37,13 @@ public class QuickDisenchant extends JavaPlugin {
     }
     public void onDisable(){
 
+    }
+
+    public String getPrefix() {
+        return ChatColor.translateAlternateColorCodes('&', this.getConfig().getString("messages.prefix"));
+    }
+
+    public String translate(String path) {
+        return getPrefix() + ChatColor.translateAlternateColorCodes('&', this.getConfig().getString(path));
     }
 }

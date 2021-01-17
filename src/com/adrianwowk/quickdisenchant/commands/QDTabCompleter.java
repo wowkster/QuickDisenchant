@@ -15,7 +15,7 @@ public class QDTabCompleter implements TabCompleter {
     @Override
     public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {
         // /disenchant <target> <enchantment>
-        if (cmd.getName().equalsIgnoreCase("disenchant") && args.length < 1){
+        if (cmd.getName().equalsIgnoreCase("disenchant") && args.length <= 1){
             Player p = (Player) sender;
             List<String> list = new ArrayList<>();
             if (p.hasPermission("quickdisenchant.disenchant")){
@@ -23,11 +23,12 @@ public class QDTabCompleter implements TabCompleter {
                 for (Player player : Bukkit.getOnlinePlayers()) {
                     list.add(player.getDisplayName());
                 }
+                list.add("reload");
             }
 
             return list;
         }
-        else if (cmd.getName().equalsIgnoreCase("disenchant") && args.length >= 2){
+        else if (cmd.getName().equalsIgnoreCase("disenchant") && args.length <= 2){
             if (sender instanceof Player){
                 Player p = (Player) sender;
                 Player target = Bukkit.getPlayer(args[0]);
