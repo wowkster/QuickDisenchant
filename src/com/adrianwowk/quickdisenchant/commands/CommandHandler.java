@@ -81,6 +81,7 @@ public class CommandHandler implements CommandExecutor {
             removeEnchant(p, args[0], args[1], args[2]);
         } else {
             // to many args
+            p.sendMessage(instance.translate("messages.command.invalid.to-many-args"));
         }
     }
 

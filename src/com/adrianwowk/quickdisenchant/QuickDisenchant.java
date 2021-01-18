@@ -31,11 +31,7 @@ public class QuickDisenchant extends JavaPlugin {
         Metrics metrics = new Metrics(this, 10039);
 
         // Server Console Message
-        this.getLogger().info(ChatColor.GREEN + "=================================");
-        this.getLogger().info(ChatColor.GREEN + "         [QuickDisenchant]          ");
-        this.getLogger().info(ChatColor.GREEN + "  Has been successfuly enabled!  ");
-        this.getLogger().info(ChatColor.GREEN + "     Author - Adrian Wowk        ");
-        this.getLogger().info(ChatColor.GREEN + "=================================");
+        console.sendMessage(getPrefix() + "Successfully Enabled :)");
     }
     public void onDisable(){
 

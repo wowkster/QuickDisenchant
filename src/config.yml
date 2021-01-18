@@ -27,3 +27,4 @@ messages:
       unknown-ench: "The specified enchantment is invalid. Usage: /disenchant <target> [enchantment_id] [levels]"
       number-format-exception: "Argument %ARG% could not be parsed to an integer."
       item-does-not-contain-ench: "The specified item does not contain the specified enchantment."
+      to-many-args: "Invalid Command because of excess arguments. Usage: /disenchant <target> [enchantment_id] [levels]"
