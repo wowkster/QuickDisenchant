@@ -34,7 +34,7 @@ public class QuickDisenchant extends JavaPlugin {
         console.sendMessage(getPrefix() + "Successfully Enabled :)");
     }
     public void onDisable(){
-
+        console.sendMessage(getPrefix() + "Successfully Disabled :)");
     }
 
     public String getPrefix() {
