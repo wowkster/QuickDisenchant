@@ -1,4 +1,4 @@
-package com.adrianwowk.quickdisenchant;
+package com.adrianwowk.quickdisenchant.utils;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;

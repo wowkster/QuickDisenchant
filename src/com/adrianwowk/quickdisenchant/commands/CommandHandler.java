@@ -22,12 +22,6 @@ public class CommandHandler implements CommandExecutor {
     public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
 
         if (cmd.getName().equalsIgnoreCase("disenchant")) {
-            if (!sender.hasPermission("quickdisenchant.disenchant")) {
-                // no perms
-                sender.sendMessage(instance.translate("messages.command.invalid.no-permission"));
-                return true;
-            }
-
             if (sender instanceof Player)
                 playerDisenchantCommand((Player) sender, args);
             else
@@ -40,14 +34,31 @@ public class CommandHandler implements CommandExecutor {
     public void playerDisenchantCommand(final Player p, final String[] args) {
 
         if (args.length == 0) {
+
+            if (!p.hasPermission("quickdisenchant.disenchant")) {
+                // no perms
+                p.sendMessage(instance.translate("messages.command.invalid.no-permission"));
+                return;
+            }
+
             // invalid command
             p.sendMessage(instance.translate("messages.command.description"));
             return;
         } else if (args.length == 1) {
 
-            if (args[0].equalsIgnoreCase("reload")){
+            if (args[0].equalsIgnoreCase("reload") ){
+                if (!p.hasPermission("quickdisenchant.reload")){
+                    p.sendMessage(instance.translate("messages.command.invalid.no-permission"));
+                }
+
                 p.sendMessage(instance.translate("messages.command.reload"));
                 instance.reloadConfig();
+                return;
+            }
+
+            if (!p.hasPermission("quickdisenchant.disenchant")) {
+                // no perms
+                p.sendMessage(instance.translate("messages.command.invalid.no-permission"));
                 return;
             }
 
@@ -72,14 +83,35 @@ public class CommandHandler implements CommandExecutor {
 
             p.sendMessage(instance.translate("messages.command.success.removed-all"));
         } else if (args.length == 2) {
+
+            if (!p.hasPermission("quickdisenchant.disenchant")) {
+                // no perms
+                p.sendMessage(instance.translate("messages.command.invalid.no-permission"));
+                return;
+            }
+
             // remove specific ench
             removeEnchant(p, args[0], args[1], "-1");
 
         } else if (args.length == 3) {
+
+            if (!p.hasPermission("quickdisenchant.disenchant")) {
+                // no perms
+                p.sendMessage(instance.translate("messages.command.invalid.no-permission"));
+                return;
+            }
+
             // remove specific ench with specific levels
 
             removeEnchant(p, args[0], args[1], args[2]);
         } else {
+
+            if (!p.hasPermission("quickdisenchant.disenchant")) {
+                // no perms
+                p.sendMessage(instance.translate("messages.command.invalid.no-permission"));
+                return;
+            }
+
             // to many args
             p.sendMessage(instance.translate("messages.command.invalid.to-many-args"));
         }
